@@ -65,10 +65,16 @@ Surfear-Toolkit 是一个基于Java 8的统一消息通知便捷工具包，支�
 根据您的需求选择合适的依赖：
 
 ```xml
+<properties>
+	<surfear.version>1.0.0</surfear.version>
+</properties>
+
 <!-- 使用完整的顺风耳消息工具包 -->
 <dependency>
     <groupId>io.github.yangdaowan</groupId>
     <artifactId>surfear-message-all</artifactId>
+    <version>${surfear.version}</version>
+    <type>pom</type>
 </dependency>
 
 <!-- 只使用邮件通道 -->
@@ -76,6 +82,8 @@ Surfear-Toolkit 是一个基于Java 8的统一消息通知便捷工具包，支�
     <groupId>io.github.yangdaowan</groupId>
     <artifactId>surfear-mail-smtp</artifactId>
 </dependency>
+
+<!-- 更多通道请查看相关文档 -->
 ```
 
 ### 使用示例

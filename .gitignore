@@ -23,6 +23,7 @@
 hs_err_pid*
 
 .idea/
+.vscode/
 
 *target/
 *.flattened-pom.xml
@@ -30,3 +31,4 @@ hs_err_pid*
 */test/*
 todo.md
 预期功能.md
+**/src/test/**

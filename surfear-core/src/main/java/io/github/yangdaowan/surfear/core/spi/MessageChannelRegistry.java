@@ -56,7 +56,6 @@ public class MessageChannelRegistry {
         }
     }
 
-
     /**
      * 初始化消息通道
      * <p>
@@ -68,13 +67,11 @@ public class MessageChannelRegistry {
      */
     public static void initMessageChannel(){
         ServiceLoader<MessageChannel> services = ServiceLoader.load(MessageChannel.class);
-        log.info("当前消息通道清单：");
-        log.info("--------------------------------------");
+
         for (MessageChannel channel : services) {
 
             ChannelMetadata metadata = channel.getMetadata();
             String channelKey = metadata.getChannelKey();
-            String description = metadata.getDescription();
             // 添加通道
             if(channels.containsKey(channelKey)){
                 throw new MessageException("重复的消息通道：" + channelKey);
@@ -82,9 +79,7 @@ public class MessageChannelRegistry {
             channels.put(channelKey, channel);
             // 从通道中获取默认配置
             ConfigurationManager.putDefaultConfig(metadata);
-            log.info("{} : {} ", channelKey, description);
         }
-        log.info("--------------------------------------");
     }
 
     /**

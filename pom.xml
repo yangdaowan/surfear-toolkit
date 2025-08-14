@@ -12,11 +12,40 @@
 	<description>提供统一的版本管理、依赖管理、构建管理</description>
 	<url>https://github.com/yangdaowan/surfear-toolkit</url>
 
+	<licenses>
+		<license>
+			<name>Apache-2.0</name>
+			<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	<scm>
+		<url>https://github.com/yangdaowan/surfear-toolkit</url>
+		<connection>scm:git:git://github.com/yangdaowan/surfear-toolkit.git</connection>
+	</scm>
+	<developers>
+		<developer>
+			<name>yangdaowan</name>
+			<email>512934216@qq.com</email>
+		</developer>
+	</developers>
+
 	<modules>
 		<module>surfear-core</module>
 		<module>surfear-channel</module>
 		<module>surfear-message-all</module>
+		<module>surfear-spring-boot-starter</module>
 	</modules>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
 
 	<properties>
 		<!-- base -->
@@ -48,9 +77,9 @@
 		<configuration2.version>2.12.0</configuration2.version>
 		<yaml.version>1.33</yaml.version>
 		<autoservice.version>1.1.1</autoservice.version>
-		<thymeleaf.version>3.0.13.RELEASE</thymeleaf.version>
+		<thymeleaf.version>3.0.15.RELEASE</thymeleaf.version>
 		<!--必要-->
-		<netty.version>4.2.0.Final</netty.version>
+		<netty.version>4.1.77.Final</netty.version>
 		<mail.version>1.6.2</mail.version>
 		<okhttp.version>4.12.0</okhttp.version>
 		<!--高级支持-->
@@ -215,6 +244,71 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
 				<version>3.1.4</version>
+			</plugin>
+			<!--   central发布插件    -->
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>ossrh</publishingServerId>
+                    <tokenAuth>true</tokenAuth>
+                </configuration>
+            </plugin>
+			<!-- 源码和Javadoc -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.4.1</version>
+				<configuration>
+                    <charset>UTF-8</charset>
+                    <encoding>UTF-8</encoding>
+                    <docencoding>UTF-8</docencoding>
+                    <additionalJOption>-Xdoclint:none</additionalJOption>
+                </configuration>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- GPG签名 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+    			<version>1.6</version>
+                <configuration>
+                     <!--指定 GPG 执行程序的路径-->
+                    <executable>E:\Tool\GnuPG\bin\gpg.exe</executable>
+                     <!--指定用于签名的 GPG 密钥名称。-->
+                    <keyname>io.github.yangdaowan</keyname>
+                </configuration>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<!-- 合规化pom -->
 			<plugin>
