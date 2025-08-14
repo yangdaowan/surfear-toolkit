@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.github.yangdaowan</groupId>
+        <artifactId>surfear-channel</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>surfear-sms-baidu</artifactId>
+    <packaging>jar</packaging>
+    <name>surfear sms baidu</name>
+    <description>百度云短信通道实现</description>
+    <url>https://github.com/yangdaowan/surfear-toolkit</url>
+
+    <properties>
+        <main.basedir>${basedir}/..</main.basedir>
+    </properties>
+
+    <dependencies>
+        <!-- surfear-core -->
+        <dependency>
+            <groupId>io.github.yangdaowan</groupId>
+            <artifactId>surfear-core</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <!-- okhttp -->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

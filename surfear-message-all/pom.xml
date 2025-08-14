@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.github.yangdaowan</groupId>
+        <artifactId>surfear-toolkit</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>surfear-message-all</artifactId>
+    <packaging>pom</packaging>
+    <name>surfear message all</name>
+    <description>消息通道POM聚合</description>
+    <url>https://github.com/yangdaowan/surfear-toolkit</url>
+
+    <properties>
+        <main.basedir>${basedir}/..</main.basedir>
+    </properties>
+
+    <dependencies>
+        <!-- surfear-core -->
+        <dependency>
+            <groupId>io.github.yangdaowan</groupId>
+            <artifactId>surfear-core</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <!-- surfear-mail -->
+        <dependency>
+            <groupId>io.github.yangdaowan</groupId>
+            <artifactId>surfear-mail-smtp</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <!-- surfear-sms -->
+        <dependency>
+            <groupId>io.github.yangdaowan</groupId>
+            <artifactId>surfear-sms-aliyun</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.yangdaowan</groupId>
+            <artifactId>surfear-sms-baidu</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.yangdaowan</groupId>
+            <artifactId>surfear-sms-tencent</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <!-- surfear-inbox -->
+        <dependency>
+            <groupId>io.github.yangdaowan</groupId>
+            <artifactId>surfear-push-sse</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <!-- surfear-im -->
+        <dependency>
+            <groupId>io.github.yangdaowan</groupId>
+            <artifactId>surfear-im-dingtalk</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

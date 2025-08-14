@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.github.yangdaowan</groupId>
+        <artifactId>surfear-channel</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>surfear-mail-smtp</artifactId>
+    <packaging>jar</packaging>
+    <name>surfear mail smtp</name>
+    <description>smtp邮件通道实现</description>
+    <url>https://github.com/yangdaowan/surfear-toolkit</url>
+
+    <properties>
+        <main.basedir>${basedir}/..</main.basedir>
+    </properties>
+
+    <dependencies>
+        <!-- surfear-core -->
+        <dependency>
+            <groupId>io.github.yangdaowan</groupId>
+            <artifactId>surfear-core</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <!-- 邮件 -->
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
