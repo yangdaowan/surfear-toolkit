@@ -2,7 +2,7 @@
 > _"三界传音，无远弗届"_ ——《封神演义》第十七回  
 
 [![License](https://img.shields.io/badge/license-Apache2.0-blue.svg)](LICENSE)
-[![Maven Central](https://img.shields.io/badge/Maven%20Central-1.0.0-brightgreen.svg)](https://search.maven.org/search?q=g:com.github.surfear)
+[![Maven Central](https://img.shields.io/badge/Maven%20Central-1.0.0-brightgreen.svg)](https://central.sonatype.com/search?q=io.github.yangdaowan)
 [![Java Version](https://img.shields.io/badge/JDK-8+-green.svg)](https://www.oracle.com/java/technologies/javase-downloads.html)
 
 ## 项目概览
