@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>io.github.yangdaowan</groupId>
+        <artifactId>surfear-toolkit</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>surfear-spring-boot-starter</artifactId>
+    <packaging>jar</packaging>
+    <name>surfear spring boot starter</name>
+    <description>Spring Boot Starter for Surfear消息通知工具包</description>
+    <url>https://github.com/yangdaowan/surfear-toolkit</url>
+
+    <properties>
+        <main.basedir>${basedir}/..</main.basedir>
+    </properties>
+
+    <dependencies>
+        <!-- 核心依赖：包含所有通道 -->
+        <dependency>
+            <groupId>io.github.yangdaowan</groupId>
+            <artifactId>surfear-message-all</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+        </dependency>
+        
+        <!-- Spring Boot自动配置 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>2.7.0</version>
+            <optional>true</optional>
+        </dependency>
+        
+        <!-- 配置处理器（可选） -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <version>2.7.0</version>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- SLF4J API -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        
+        <!-- lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+</project>
